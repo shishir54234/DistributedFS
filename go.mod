@@ -1,4 +1,4 @@
-module DistributedFS
+module DistributedFileSystem
 
 go 1.24
 

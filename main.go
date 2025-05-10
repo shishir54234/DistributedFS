@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	tcpOpts := p2p.TCP
+	tcpOpts := p2p.
 }
