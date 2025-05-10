@@ -47,10 +47,10 @@ func (transport *TCPTransport) startAcceptLoop() {
 
 type Temp struct{}
 
-func (t *TCPTransport) handleConn(conn net.Conn) {
+func (t *TCPTransport) handleConn(tcpOpts TCPTransportOpts, conn net.Conn) {
 
 	fmt.Println("new incoming connection:", conn.RemoteAddr())
-	peer := NewTCPTransport(conn.RemoteAddr().String())
+	peer := NewTCPTransport(tcpOpts, conn.RemoteAddr().String())
 	if err := t.TcpOpts.HandShakeFunc(peer); err != nil {
 		fmt.Println("handshake error:", err)
 
@@ -58,7 +58,7 @@ func (t *TCPTransport) handleConn(conn net.Conn) {
 		return
 
 	}
-	msg := &Temp()
+	msg := &Temp{}
 	for {
 		if err := t.TcpOpts.Decoder.Decode(conn, msg); err != nil {
 			fmt.Println("decode error:", err)

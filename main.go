@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/anthdm/foreverstore/p2p"
+	"github.com/shishir54234/DistributedFileSystem/p2p"
 	"log"
 )
 
