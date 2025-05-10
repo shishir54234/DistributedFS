@@ -1,4 +1,4 @@
-module DistributedFS
+module github.com/shishir54234/DistributedFS
 
 go 1.24
 

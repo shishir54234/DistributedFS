@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/shishir54234/DistributedFileSystem/p2p"
-	"log"
+	"github.com/shishir54234/DistributedFS"
+
 )
 
 func main() {
